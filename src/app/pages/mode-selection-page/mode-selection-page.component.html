@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="text-a">Please select difficulty mode and category</div>
+
+  <div class="difficulty-selector">
+    <div class="difficulty-btn"
+         [ngStyle]="difficultyMode === 0 ? {'color' : '#FFFFFF', 'background-color' : '#7DBF97'} : {'color' : '#7DBF97', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameDifficultyMode(0)"><span>BEGINNER</span>
+    </div>
+    <div class="difficulty-btn"
+         [ngStyle]="difficultyMode === 1 ? {'color' : '#FFFFFF', 'background-color' : '#00A03F'} : {'color' : '#00A03F', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameDifficultyMode(1)"><span>ADVANCED</span>
+    </div>
+  </div>
+
+  <div class="category-selector">
+    <div class="row-with-two-buttons">
+    <div class="category-btn"
+         [ngStyle]="categoryMode === 0 ? {'color' : '#FFFFFF', 'background-color' : '#19005F'} : {'color' : '#19005F', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameCategoryMode(0)"><span>{{categoryModes[0]}}</span>
+    </div>
+    <div class="category-btn"
+         [ngStyle]="categoryMode === 1 ? {'color' : '#FFFFFF', 'background-color' : '#19005F'} : {'color' : '#19005F', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameCategoryMode(1)"><span>{{categoryModes[1]}}</span>
+    </div>
+    </div>
+    <div class="row-with-two-buttons">
+    <div class="category-btn"
+         [ngStyle]="categoryMode === 2 ? {'color' : '#FFFFFF', 'background-color' : '#19005F'} : {'color' : '#19005F', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameCategoryMode(2)"><span>{{categoryModes[2]}}</span>
+    </div>
+    <div class="category-btn"
+         [ngStyle]="categoryMode === 3 ? {'color' : '#FFFFFF', 'background-color' : '#19005F'} : {'color' : '#19005F', 'background-color' : '#FFFFFF'}"
+         (click)="selectGameCategoryMode(3)"><span>{{categoryModes[3]}}</span>
+    </div>
+    </div>
+  </div>
+
+  <div class="button-wrapper" routerLink="{{gamePage}}">
+    <div class="project-btn-main">PLAY NOW</div>
+  </div>
+
+
+</div>

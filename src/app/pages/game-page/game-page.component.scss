@@ -1,0 +1,247 @@
+@import 'src/common-styles';
+@import 'src/common-components';
+@import 'src/animation-component';
+
+.object-one, .object-two {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.object-one {
+  color: $primary-blue;
+  box-shadow: 0 0 4px $primary-blue inset;
+}
+
+.object-two {
+  color: $secondary-blue;
+  box-shadow: 0 0 4px $secondary-blue inset;
+
+}
+
+.movie-image {
+  width: 60px;
+}
+
+
+.game-data-wrapper, .wrong-guess-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.wrong-guess-wrapper {
+  background-color: red;
+
+}
+
+.advanced-mode-image, .ok-image, .wrong-image {
+  width: 40px;
+  height: 40px;
+}
+
+.mode-badge-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  justify-content: center;
+  gap: 4px;
+}
+
+
+.mode-badge-text, .response-message-text {
+  color: $primary-white;
+  position: relative;
+  top: 10px;
+
+}
+
+.question-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $primary-white;
+  padding-top: 20vh;
+
+}
+
+.question-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.guess-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.guess-btn {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: $primary-font;
+  padding: 2px 6px;
+  border: 1px solid $primary-white;
+}
+
+.first-btn {
+  margin-left: 10%;
+}
+
+.second-btn {
+  margin-right: 10%;
+  margin-left: auto;
+}
+
+.response-message-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+}
+
+.correct-response {
+  margin-top: auto;
+}
+.wrong-response {
+  display: flex;
+  justify-content: center;
+}
+
+.score-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  left: 10%;
+  top: 88%;
+  height: 12%;
+}
+
+.comparable-value {
+  position: absolute;
+}
+
+.score {
+  margin-left: auto;
+}
+
+.score-value {
+  background-color: unset;
+  color: $primary-black;
+}
+
+.plus-one-point-beginner-image, .plus-one-point-advanced-image {
+  position: absolute;
+  visibility: hidden;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  .object-one, .object-two {
+    width: 80%;
+    height: 20%;
+    margin-left: 10%;
+  }
+
+  .movie-image, .object-title {
+    padding-left: 10px;
+  }
+
+  .object-title {
+    padding-right: 10px;
+  }
+
+  .movie-image {
+    padding-top: 10px;
+  }
+
+  .object-one {
+    top: 2%
+  }
+  .object-two {
+    top: 24%
+  }
+
+  .game-data-wrapper, .wrong-guess-wrapper {
+    width: 80%;
+    height: 40%;
+    top: 46%;
+    margin-left: 10%;
+  }
+
+  .question-text-wrapper {
+    padding-top: 20px;
+  }
+
+
+  .value-one, .value-two {
+    left: 60%;
+    top: calc(50% - 13px);
+  }
+
+  .score-wrapper {
+    width: 80%;
+    left: 10%;
+  }
+
+  .plus-one-point-beginner-image, .plus-one-point-advanced-image {
+    right: 10%;
+  }
+
+
+}
+
+@media screen and (min-width: 601px) {
+
+  .object-one, .object-two {
+    width: 25%;
+    top: 60px;
+    height: 60%;
+  }
+
+  .object-one {
+    left: 5%;
+  }
+
+  .game-data-wrapper, .wrong-guess-wrapper {
+    width: 30%;
+    top: 60px;
+    height: 60%;
+    left: 35%;
+  }
+
+  .object-two {
+    left: 70%;
+  }
+
+  .movie-image, .object-title {
+    padding-left: 10px;
+  }
+  .movie-image {
+    padding-top: 10px;
+  }
+
+  .value-one, .value-two {
+    left: 10px;
+    top: 70%;
+  }
+
+  .score-wrapper {
+    width: 90%;
+    left: 5%;
+  }
+
+  .plus-one-point-beginner-image, .plus-one-point-advanced-image {
+    right: 5%;
+  }
+
+
+}
+

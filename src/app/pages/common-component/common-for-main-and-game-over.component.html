@@ -1,0 +1,19 @@
+<div class="common-component" [ngStyle]="pageIndex === 2 && !isMobile? {'padding-top' : '26vh'} : {}">
+
+  <div class="object-one">
+    <div class="page-image-wrapper"><img class="page-img" src='{{imageSrc}}' alt="page-img"></div>
+  </div>
+
+  <div class="object-two">
+    <div class="text-button-wrapper">
+      <div class="text-dynamic" [ngStyle]="pageIndex === 0 ? {'color': '#19005F'} : {'color': 'red'}">{{textForOutput}}</div>
+      <div *ngIf="pageIndex === 0" class="button-wrapper" routerLink="{{modeSelectionPage}}">
+        <div class="project-btn-main">{{buttonText}}</div>
+      </div>
+      <div *ngIf="pageIndex !== 0" class="button-wrapper" routerLink="{{mainPage}}">
+        <div class="project-btn-main">HOME PAGE</div>
+      </div>
+    </div>
+  </div>
+
+</div>

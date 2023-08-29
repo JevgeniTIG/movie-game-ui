@@ -1,0 +1,51 @@
+@import 'src/common-components';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.difficulty-selector {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.difficulty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 180px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.category-selector {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.row-with-two-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  width: 140px;
+  height: 140px;
+  font-size: 20px;
+}
+
+
+
+

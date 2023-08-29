@@ -1,0 +1,77 @@
+.correct-response-message {
+  animation: appear 4s ease-in-out;
+}
+
+.plus-one-point-beginner-image, .plus-one-point-advanced-image {
+  animation: moveDownAndGetSmaller 1s ease-in;
+}
+
+.score-value-beginner-animated {
+  animation: showScoreInBeginnerMode 0.2s ease-in;
+  animation-delay: 1s;
+}
+
+.score-value-advanced-animated {
+  animation: showScoreInAdvancedMode 0.2s ease-in;
+  animation-delay: 1s;
+}
+
+
+
+
+@keyframes appear {
+
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes moveDownAndGetSmaller {
+
+  0% {
+    top: 80%;
+    width: 30px;
+    visibility: visible;
+  }
+
+  100% {
+    top: 88%;
+    width: 10px;
+    visibility: hidden;
+  }
+
+}
+
+@keyframes showScoreInBeginnerMode {
+
+  0% {
+    color: $primary-black;
+  }
+
+  100% {
+    background-color: $primary-green;
+    color: $primary-white;
+  }
+
+}
+
+@keyframes showScoreInAdvancedMode {
+
+  0% {
+    color: $primary-black;
+  }
+
+  100% {
+    background-color: $secondary-green;
+    color: $primary-white;
+  }
+
+}
+
