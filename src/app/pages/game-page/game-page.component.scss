@@ -64,7 +64,6 @@
   align-items: center;
   color: $primary-white;
   padding-top: 20vh;
-
 }
 
 .question-text {
@@ -242,6 +241,14 @@
     right: 5%;
   }
 
+
+}
+
+@media screen and (max-height: 450px) {
+
+  .question-text-wrapper {
+    padding-top: 20px;
+  }
 
 }
 

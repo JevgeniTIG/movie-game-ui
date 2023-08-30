@@ -84,3 +84,20 @@
   }
 
 }
+
+
+@media screen and (max-height: 450px) {
+
+  .common-component {
+    padding-top: 20px;
+    align-items: unset;
+  }
+  .object-one {
+    margin-top: unset;
+  }
+
+  .page-img {
+    width: 60%;
+  }
+
+}
