@@ -10,14 +10,27 @@
 }
 
 .object-one {
-  color: $primary-blue;
-  box-shadow: 0 0 4px $primary-blue inset;
+  background-color: $primary-blue;
+  color: $primary-white;
+  cursor: pointer;
 }
 
 .object-two {
-  color: $secondary-blue;
-  box-shadow: 0 0 4px $secondary-blue inset;
+  background-color: $secondary-blue;
+  color: $primary-white;
+  cursor: pointer;
+}
 
+.object-one:hover {
+  background-color: unset;
+  color: $primary-blue;
+  border: 1px solid $primary-blue;
+}
+
+.object-two:hover {
+  background-color: unset;
+  color: $secondary-blue;
+  border: 1px solid $secondary-blue;
 }
 
 .movie-image {
@@ -71,29 +84,6 @@
   padding-right: 10px;
 }
 
-.guess-buttons-wrapper {
-  display: flex;
-  flex-direction: row;
-  padding-top: 20px;
-  width: 100%;
-}
-
-.guess-btn {
-  cursor: pointer;
-  font-weight: 700;
-  font-family: $primary-font;
-  padding: 2px 6px;
-  border: 1px solid $primary-white;
-}
-
-.first-btn {
-  margin-left: 10%;
-}
-
-.second-btn {
-  margin-right: 10%;
-  margin-left: auto;
-}
 
 .response-message-wrapper {
   display: flex;

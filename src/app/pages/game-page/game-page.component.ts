@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {constants} from "../../constants/constants";
 import {MovieDTO} from "../../models/MovieDTO";
 import {MovieService} from "../../services/movie.service";
@@ -34,17 +34,12 @@ export class GamePageComponent implements OnInit {
   categoryMode = constants.CATEGORY_MODES[Number(localStorage.getItem('categorySelected'))];
 
 
-  firstBtnText = ""
-  secondBtnText = ""
+  imageSrc1 = "../../../assets/movie_recorder_primary_white.svg";
+  imageSrc2 = "../../../assets/movie_recorder_primary_white.svg";
 
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: { target: { innerWidth: any; }; }) {
-    this.isMobileView()
-  }
 
   ngOnInit(): void {
-    this.isMobileView()
     this.getMovies(0); // no id on first round
     if (localStorage.getItem('highScore') != undefined) {
       this.highScore = Number(localStorage.getItem('highScore'));
@@ -67,16 +62,6 @@ export class GamePageComponent implements OnInit {
     })
   }
 
-
-  isMobileView() {
-    if (window.innerWidth > 600) {
-      this.firstBtnText = 'LEFT';
-      this.secondBtnText = 'RIGHT';
-    } else {
-      this.firstBtnText = 'TOP';
-      this.secondBtnText = 'BOTTOM';
-    }
-  }
 
 
   getBackGroundColor(): string {
@@ -150,5 +135,19 @@ export class GamePageComponent implements OnInit {
 
 
 
+  changeImageSrc1(hover: boolean) {
+    if (hover) {
+      this.imageSrc1 = '../../../assets/movie_recorder_primary_blue.svg'
+    } else {
+      this.imageSrc1 = '../../../assets/movie_recorder_primary_white.svg'
+    }
+  }
 
+  changeImageSrc2(hover: boolean) {
+    if (hover) {
+      this.imageSrc2 = '../../../assets/movie_recorder_secondary_blue.svg'
+    } else {
+      this.imageSrc2 = '../../../assets/movie_recorder_primary_white.svg'
+    }
+  }
 }

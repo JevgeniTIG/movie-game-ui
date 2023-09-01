@@ -10,10 +10,6 @@
 
     <div class="question-text-wrapper">
       <div class="question-text">Which movie has higher {{categoryMode}}?</div>
-      <div class="guess-buttons-wrapper">
-        <div *ngIf="gameStage === 0 || gameStage === 2" class="first-btn guess-btn" (click)="guess(movies[0].id, 0)">{{firstBtnText}}</div>
-        <div *ngIf="gameStage === 0 || gameStage === 2" class="second-btn guess-btn" (click)="guess(movies[1].id, 1)">{{secondBtnText}}</div>
-      </div>
     </div>
 
     <div *ngIf="gameStage === 1 && guessResponse && guessResponse.correct" class="response-message-wrapper correct-response">
@@ -34,18 +30,19 @@
 
 
   <div>
-    <div class="object-one">
+    <div class="object-one" (mouseover)="changeImageSrc1(true)" (mouseout)="changeImageSrc1(false)" (click)="guess(movies[0].id, 0)">
       <div><img class="movie-image"
-                src="../../../assets/movie_recorder_primary_blue.svg" alt="first-movie-image"></div>
+                src="{{imageSrc1}}" alt="first-movie-image"></div>
       <div class="object-title">{{movies[0].originalTitle}}</div>
       <div *ngIf="guessResponse && movieValuesSet"
            class="comparable-value value-one text-a">{{firstMovieValue}}</div>
 
     </div>
 
-    <div class="object-two">
+
+    <div class="object-two" (mouseover)="changeImageSrc2(true)" (mouseout)="changeImageSrc2(false)"  (click)="guess(movies[1].id, 1)">
       <div><img class="movie-image"
-                src="../../../assets/movie_recorder_secondary_blue.svg" alt="second-movie-image"></div>
+                src="{{imageSrc2}}" alt="second-movie-image"></div>
       <div class="object-title">{{movies[1].originalTitle}}</div>
       <div *ngIf="guessResponse && (gameStage === 1 || gameStage === 3) && movieValuesSet"
            class="comparable-value value-two text-a">{{secondMovieValue}}</div>
