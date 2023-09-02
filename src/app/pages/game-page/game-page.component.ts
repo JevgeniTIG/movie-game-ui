@@ -75,41 +75,43 @@ export class GamePageComponent implements OnInit {
 
   guess(userGuess: number, indexOfMovie: number) {
 
-    this.movieService.guessMovie(this.categoryMode, userGuess, this.movies.find(m => m.id !== userGuess)!.id, indexOfMovie)
-      .subscribe(data => {
-        this.guessResponse = data;
+    if (this.gameStage === 0 || this.gameStage === 2) {
 
-        if (this.guessResponse.correct) {
+      this.movieService.guessMovie(this.categoryMode, userGuess, this.movies.find(m => m.id !== userGuess)!.id, indexOfMovie)
+        .subscribe(data => {
+          this.guessResponse = data;
 
-          this.gameStage = 1;
-          this.setMovieValues();
+          if (this.guessResponse.correct) {
 
-          setTimeout(() => {
-            this.score++;
-            if (this.score > this.highScore) {
-              this.highScore = this.score;
-            }
-          }, constants.SHORT_DELAY);
+            this.gameStage = 1;
+            this.setMovieValues();
 
-
-          setTimeout(() => {
-            this.getMovies(userGuess)
-          }, constants.LONG_DELAY);
+            setTimeout(() => {
+              this.score++;
+              if (this.score > this.highScore) {
+                this.highScore = this.score;
+              }
+            }, constants.SHORT_DELAY);
 
 
+            setTimeout(() => {
+              this.getMovies(userGuess)
+            }, constants.LONG_DELAY);
 
-        } else {
-          this.userGuessed = false;
-          this.gameStage = 3;
-          this.setMovieValues();
-          localStorage.setItem('highScore', this.highScore.toString());
-          setTimeout(() => this.router.navigate(['/' + constants.GAME_OVER]), constants.LONG_DELAY);
-          this.score = 0;
-        }
 
-      }, error => {
-        this.router.navigate(['/' + constants.SERVER_DOWN])
-      })
+          } else {
+            this.userGuessed = false;
+            this.gameStage = 3;
+            this.setMovieValues();
+            localStorage.setItem('highScore', this.highScore.toString());
+            setTimeout(() => this.router.navigate(['/' + constants.GAME_OVER]), constants.LONG_DELAY);
+            this.score = 0;
+          }
+
+        }, error => {
+          this.router.navigate(['/' + constants.SERVER_DOWN])
+        })
+    }
 
   }
 
@@ -129,6 +131,8 @@ export class GamePageComponent implements OnInit {
     else if (this.gameStage === 2) {
       this.firstMovieValue = this.guessResponse.supposedHigherValue;
     }
+
+
 
   }
 
